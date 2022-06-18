@@ -6,3 +6,12 @@ export const loadData = (key) => {
     return null;
   }
 };
+
+export const saveData = (key, value) => {
+  try {
+      value = JSON.stringify(value);
+      localStorage.setItem(key, value);
+  } catch {
+      return -1;
+  }
+};

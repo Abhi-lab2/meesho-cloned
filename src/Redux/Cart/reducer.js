@@ -1,4 +1,4 @@
-import { loadData } from "./localStorage";
+import { loadData, saveData } from "./localStorage";
 import * as types from "./actionTypes";
 
 const cart = loadData("Cart");
@@ -35,14 +35,13 @@ const cartReducer = (state = initCart, action) => {
       };
     }
     case types.CHANGE_CHECKOUT_STAGE: {
-    //   saveData("Address", state.address);
-    //   saveData("Cart", state.cart);
+      saveData("Address", state.address);
+      saveData("Cart", state.cart);
       return {
         ...state,
         stage: action.payload.stage,
       };
     }
-
     default:
       return state;
   }

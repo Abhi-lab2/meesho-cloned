@@ -22,7 +22,7 @@ const addProductCartFailure = (payload) => {
   };
 };
 
-export const addProductCart = (id) => (product) => (dispatch) => {
+export const addProductCart = (product) => (dispatch) => {
   dispatch(addProductCartRequest());
 
   Axios.post(`http://localhost:3001/cart`, product)

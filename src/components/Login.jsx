@@ -13,15 +13,17 @@ export const Login = () => {
 
   const setMobileNumber = () => {
     if (number.toString().length === 10) {
+      // alert()
       setNum(number);
       localStorage.setItem("meesho-user-number", JSON.stringify(number));
+      alert("New OTP is - 78520");
     } else {
       alert("Number should be of 10 digits");
-      // console.log("number must be 10 digits");
     }
   };
   const setOtps = () => {
-    if (otp) {
+    if (otp === "78520") {
+      // console.log(Math.floor(100000 + Math.random() * 900000))
       let userNumber = JSON.parse(localStorage.getItem("meesho-user-number"));
       dispatch(logOut(userNumber));
 
@@ -43,7 +45,9 @@ export const Login = () => {
             <div>
               <br />
               <br />
-              <div className="input_cont_signUp"> <br />
+              <div className="input_cont_signUp">
+                {" "}
+                <br />
                 <div id="userNumber">Enter OTP sent to {num}</div> <br />
                 <div>
                   <input

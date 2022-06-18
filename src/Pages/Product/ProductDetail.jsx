@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,22 +11,21 @@ import {
   FaAngleRight,
 } from "react-icons/fa";
 import { addProductCart } from "../../Redux/Product/action";
+import Footer from "../../components/Footer";
 
 let discount = Math.floor(Math.random() * 150);
 
-
 export const ProductDetail = () => {
-
-    let allImages = [
-        "https://source.unsplash.com/random/?cloths",
-        "https://source.unsplash.com/random/?shoes",
-        "https://source.unsplash.com/random/?kids",
-        "https://source.unsplash.com/random/?motivation",
-        "https://source.unsplash.com/random/?nature",
-      ];
+  let allImages = [
+    "https://source.unsplash.com/random/?cloths",
+    "https://source.unsplash.com/random/?shoes",
+    "https://source.unsplash.com/random/?kids",
+    "https://source.unsplash.com/random/?motivation",
+    "https://source.unsplash.com/random/?nature",
+  ];
   let i;
   let { id } = useParams();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   let [state, setState] = useState("Add to Cart");
   const [image, setImage] = useState("");
   // let cart = useSelector((state) => state.cart);
@@ -43,10 +41,14 @@ export const ProductDetail = () => {
 
   const cartHandler = (e) => {
     dispatch(addProductCart(e.target.id)); //addToCart
-    if (state === "Add to Cart") setState("Already in the Cart");
+    if (state === "Add to Cart") {
+      alert("product added");
+      setState("Added into the Cart");
+    }
   };
-  
-  let { images, title, category, rating, sizes, original_price, discounted_price, details } = products[i];
+
+  let { images, title, rating, original_price, discounted_price, details } =
+    products[i];
 
   useEffect(() => {
     setImage(images);
@@ -55,7 +57,7 @@ export const ProductDetail = () => {
 
   return (
     <Section id="single-product">
-    <article id="product-article-1">
+      <article id="product-article-1">
         {allImages.map((i) => (
           <img src={i} alt="" onClick={() => setImage(i)} />
         ))}
@@ -63,7 +65,7 @@ export const ProductDetail = () => {
       <article id="product-article-2">
         <img src={image} alt="" id="main-img" />
         <button id={+id} onClick={cartHandler}>
-        <FaShoppingCart /> {state}
+          <FaShoppingCart /> {state} {localStorage.setItem(`product/${id}`,  JSON.stringify(`product/${id}`))}
         </button>
         <hr />
         <p>{images.length} Similar products</p>
@@ -77,7 +79,8 @@ export const ProductDetail = () => {
         <div id="price">
           <h2>{title}</h2>
           <h3 className="price">
-            ₹{discounted_price} <span className="aprice">₹{original_price}</span>{" "}
+            ₹{discounted_price}{" "}
+            <span className="aprice">₹{original_price}</span>{" "}
             <span className="discount">
               {((1 - discounted_price / original_price) * 100).toFixed(1)}% off
             </span>
@@ -107,23 +110,34 @@ export const ProductDetail = () => {
           <button>XL</button>
         </div>
         <div id="details">
-          <h6><h1><span style={{color : "black"}}>Product Details</span></h1></h6>
+          <h6>
+            <h1>
+              <span style={{ color: "black" }}>Product Details</span>
+            </h1>
+          </h6>
           {details.map((i) => (
             <h6>{i}</h6>
           ))}
-          <h6> <h4>Sizes:</h4> </h6>
+          <h6>
+            {" "}
+            <h4>Sizes:</h4>{" "}
+          </h6>
           <h6>S (Chest Size : 38 in, Length Size: 27 in)</h6>
           <h6>M (Chest Size : 40 in, Length Size: 27.5 in) </h6>
           <h6>L (Chest Size : 42 in, Length Size: 28 in)</h6>
           <h6>XL (Chest Size : 44 in, Length Size: 28.5 in)</h6>
           <h6>Country of Origin : India</h6>
-          <p><span style={{cursor:"pointer"}}>More Information</span></p>
+          <p>
+            <span style={{ cursor: "pointer" }}>More Information</span>
+          </p>
         </div>
         <div id="soldBy">
           <p>Sold By</p>
           <article>
             <FaShopify />
-            <span style={{marginRight:"13rem"}}><h4>Krishna ethnic world</h4></span>
+            <span style={{ marginRight: "13rem" }}>
+              <h4>Krishna ethnic world</h4>
+            </span>
             <button>View Shop</button>
           </article>
           <h6>
@@ -177,7 +191,7 @@ export const ProductDetail = () => {
           <span>Best Quality Products from Trusted Supplier</span>
         </div>
       </article>
+      {/* <Footer/> */}
     </Section>
-
-  )
+  );
 };

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer";
 import { changeCheckoutStage } from "../../Redux/Cart/action";
 import styles from "./Cart.module.css";
 
 export const Cart = () => {
   const navigate = useNavigate();
-  const { cart, stage } = useSelector((state) => state.cartData, shallowEqual);
+  const { cart } = useSelector((state) => state.cartData, shallowEqual);
   const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
 
@@ -14,9 +15,9 @@ export const Cart = () => {
     let res = 0;
     cart?.forEach((curr) => (res += curr.qty * curr.discounted_price));
     setTotal(res);
-    dispatch(changeCheckoutStage(2));
+    dispatch(changeCheckoutStage(1));
   }, [cart]);
-
+  
   return (
     <div>
       Cart
@@ -26,7 +27,7 @@ export const Cart = () => {
             <div className={styles.empty}>
                 <img style={{ marginTop: "7rem", border : "5px solid red"}} src="https://meesho.com/assets/Checkout/empty-cart.png" alt="empty-cart" />
                 <p style={{ marginTop: "3rem"}}>Your cart is empty</p>
-                <button onClick={()=>{window.location.replace("/")}} style={{ padding: "1rem 2rem", marginTop: "2rem" }} > View Products </button>
+                <button onClick={()=>navigate("/")} style={{ padding: "1rem 2rem", marginTop: "2rem" }} > View Products </button>
             </div>
         ) : (
           <div className={styles.priceBar}>
@@ -43,6 +44,7 @@ export const Cart = () => {
         )
         }
       </div>
+      <Footer/>
     </div>
   );
 };

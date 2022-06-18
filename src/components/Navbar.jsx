@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {MdLogout} from "react-icons/md"
+import {BsFillBagFill} from "react-icons/bs"
 import "./Navbar.css";
 
 export const Navbar = () => {
@@ -12,12 +14,12 @@ export const Navbar = () => {
     navigate("/products");
   };
   const logOutUser = () => {
-    localStorage.setItem("user-phone", null);
+    localStorage.setItem("meesho-user-number", null);
     setUser(null);
     setUser(0);
   };
 
-  let userPhn = JSON.parse(localStorage.getItem("user-phone"));
+  let userPhn = JSON.parse(localStorage.getItem("meesho-user-number"));
 
   return (
     <>
@@ -99,13 +101,13 @@ export const Navbar = () => {
                       <div>
                         <img
                           src="https://images.meesho.com/images/pow/homepage/google-play-button.jpg"
-                          alt=""
+                          alt="playstore-logo"
                         />
                       </div>
                       <div>
                         <img
                           src="https://images.meesho.com/images/pow/homepage/appstore-button.jpg"
-                          alt=""
+                          alt="app-store"
                         />
                       </div>
                     </div>
@@ -149,7 +151,17 @@ export const Navbar = () => {
                   {show === "userProf" ? (
                     <div id="user_Prof">
                       <div id="userProf_inside">
-                        <span>Hello User</span>
+                        <span>
+                          <img
+                            src="https://cdn1.iconfinder.com/data/icons/basic-ui-set-v5-user-outline/64/Account_profile_user_avatar_rounded-512.png"
+                            alt=""
+                            width={"30px"}
+                          />
+                          Hello User - 
+                          {JSON.parse(
+                            localStorage.getItem("meesho-user-number")
+                          )}
+                        </span>
                         <p className="sml">To access your Meesho account</p>
                         <p id="userNum">{userPhn ? "+91 " + userPhn : null}</p>
                         <div>
@@ -159,9 +171,9 @@ export const Navbar = () => {
                             </Link>
                           )}
                         </div>
-                        <div>My Orders</div>
+                        <div><BsFillBagFill/>  My Orders</div>
                         <div onClick={logOutUser}>
-                          {!userPhn ? null : "Log Out"}
+                         <MdLogout/> {!userPhn ? null : "Log Out"}
                         </div>
                       </div>
                     </div>
@@ -220,8 +232,12 @@ export const Navbar = () => {
             >
               <div onClick={path}>Women Ethnic</div>
               {show === "womenE" ? (
-                <div className="lowerDiv" id="wowW" onClick={() => navigate("/products/Women Ethnic")}>
-                  <div >
+                <div
+                  className="lowerDiv"
+                  id="wowW"
+                  onClick={() => navigate("/products/Women Ethnic")}
+                >
+                  <div>
                     All Women Ethnic
                     <div></div>
                     <div>View All</div>
@@ -253,7 +269,11 @@ export const Navbar = () => {
             >
               <div onClick={path}>Women Western</div>
               {show === "womenW" ? (
-                <div className="lowerDiv" id="wowW" onClick={() => navigate("/products/Women Western")}>
+                <div
+                  className="lowerDiv"
+                  id="wowW"
+                  onClick={() => navigate("/products/Women Western")}
+                >
                   <div>
                     Topwear
                     <div></div>
@@ -313,7 +333,11 @@ export const Navbar = () => {
             >
               <div onClick={path}>Men</div>
               {show === "Men" ? (
-                <div className="lowerDiv" id="wowJ" onClick={() => navigate("/products/Men")}>
+                <div
+                  className="lowerDiv"
+                  id="wowJ"
+                  onClick={() => navigate("/products/Men")}
+                >
                   <div>
                     Top Wear
                     <div></div>
@@ -338,19 +362,34 @@ export const Navbar = () => {
                 </div>
               ) : null}
             </div>
-            <div onMouseEnter={() => setShow("beauty")} onClick={() => navigate("/products/Beauty & Health")}>
+            <div
+              onMouseEnter={() => setShow("beauty")}
+              onClick={() => navigate("/products/Beauty & Health")}
+            >
               <div>Beauty & Health</div>
             </div>
-            <div onMouseEnter={() => setShow("menH")} onClick={() => navigate("/products/Men")}>
+            <div
+              onMouseEnter={() => setShow("menH")}
+              onClick={() => navigate("/products/Men")}
+            >
               <div>Men Beauty & Health</div>
             </div>
-            <div onMouseEnter={() => setShow("h&K")} onClick={() => navigate("/products/Home & Kitchen")}>
+            <div
+              onMouseEnter={() => setShow("h&K")}
+              onClick={() => navigate("/products/Home & Kitchen")}
+            >
               <div>Home & Kitchen</div>
             </div>
-            <div onMouseEnter={() => setShow("kids")} onClick={() => navigate("/products/Kids")}>
+            <div
+              onMouseEnter={() => setShow("kids")}
+              onClick={() => navigate("/products/Kids")}
+            >
               <div>Kids</div>
             </div>
-            <div onMouseEnter={() => setShow("elec")} onClick={() => navigate("/products/Electronics")}> 
+            <div
+              onMouseEnter={() => setShow("elec")}
+              onClick={() => navigate("/products/Electronics")}
+            >
               <div onClick={path}>Electronics</div>
             </div>
           </div>

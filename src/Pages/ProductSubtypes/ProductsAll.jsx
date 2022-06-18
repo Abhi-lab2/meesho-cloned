@@ -4,13 +4,13 @@ import { allProducts } from "../../Allproducts";
 // import "./products.css";
 import { Main } from "./Style-Products";
 import { FaStar } from "react-icons/fa";
+import Footer from "../../components/Footer";
 let arr = new Array(Math.floor(Math.random() * 1000 + 2000));
 for (let i = 0; i < arr.length; i++) {
   arr[i] = i + 1;
 }
 let total = Math.round(Math.random() * 1000 + 4526);
 let res;
-
 
 export default function ProductsAll() {
   let { type } = useParams();
@@ -184,6 +184,7 @@ export default function ProductsAll() {
           Next
         </button>
       </div>
+      <Footer/>
     </Main>
   );
 }

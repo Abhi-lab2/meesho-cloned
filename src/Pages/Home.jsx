@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "./home.module.css";
 import { useDispatch } from "react-redux";
 import { HomeProducts } from "./HomeProducts";
+import Footer from "../components/Footer";
+import supplierImg from "../Imgs/supplierImage.png";
 
 export const Home = () => {
   //   const dispatch = useDispatch();
@@ -137,6 +139,10 @@ export const Home = () => {
             </div>
           </div>
         </section>
+        <br /> <br />
+        <div style={{ marginTop: "15", marginLeft:"1%"}}>
+          <img src={supplierImg} alt="" width="88%"  />
+        </div>
         <section>
           <div className="MainProductsDiv">
             {/* Mapped Products Here */}
@@ -144,6 +150,7 @@ export const Home = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

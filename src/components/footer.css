@@ -1,0 +1,81 @@
+.banner5 {
+  width: 90%;
+  height: 300px;
+  display: flex;
+  margin: 40px auto;
+  justify-content: space-between;
+}
+.banner5h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333333;
+  margin-left: 0;
+}
+
+.banner5tbox {
+  width: 30%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+.social {
+  display: flex;
+  gap: 15px;
+}
+
+.logos {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+.banner5tbox img {
+  /* width: 185px; */
+  flex: 1;
+  height: 50px;
+  border-radius: 4px;
+}
+
+.career {
+  /* border: 1px solid green; */
+  text-align: left;
+}
+
+.career > h6 {
+  margin-top: 15px;
+  line-height: 20px;
+  color: gray;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.banner5 > h4 {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  font-family: "Mier bold";
+  margin: 0px;
+  margin-bottom: 10px;
+}
+.banner5 > p {
+  color: rgb(102, 102, 102);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  font-family: sans-serif;
+}
+.footer {
+  width: 85%;
+  height: 55px;
+  background-color: #ffffff;
+  font-size: 25px;
+  color: black;
+  text-align: left;
+  margin: 15px auto;
+  border: solid 0.5px rgb(197, 194, 194);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
