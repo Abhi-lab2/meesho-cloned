@@ -1,0 +1,101 @@
+
+/* .color {
+  background: linear-gradient(
+    rgb(253, 233, 242) 0%,
+    rgb(253, 240, 232) 100%,
+    rgb(253, 240, 232) 100%
+  );
+  padding-top: 50px;
+} */
+.banner > img {
+  z-index: -100;
+  width: 100%;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+.banner {
+  z-index: -100;
+  /* border: 5px solid red; */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 33%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  border-radius: 12px;
+}
+.dot {
+  margin-top: 35px;
+  color: antiquewhite;
+}
+.banner > h3 {
+  text-align: left;
+  margin-left: 12.5%;
+  font-weight: 800;
+  margin-top: 45px;
+  margin-bottom: 32px;
+}
+.inBox_Number {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  justify-content: left;
+  align-items: left;
+  width: 75%;
+  /* border: 1px solid red; */
+}
+.cnty {
+  color: rgb(155, 155, 155);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.numb_Si {
+  /* border: 1px solid rgb(81, 255, 0); */
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding-bottom: 3px;
+  border-bottom: 0.5px solid rgb(168, 168, 168);
+}
+.in_box_num {
+  border-bottom: 0.5px solid rgb(245, 50, 164);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  margin-left: 20px;
+  width: 75%;
+}
+.btn_otp, .verifyBtn {
+  width: 72%;
+  cursor: pointer;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 0.0015em;
+  font-size: 18px;
+  line-height: 20px;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  background: rgb(244, 51, 151);
+  border: none;
+  padding: 12px;
+  margin-top: 40px;
+  margin-top: 50px;
+  margin-bottom: 1px;
+  font-weight: 800;
+}
+.tnc {
+  margin-bottom: 20px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 200px;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 20px;
+  margin-bottom: 35px;
+}
+.colGra {
+  color: rgb(153, 153, 153);
+}
+.colB {
+  color: rgb(244, 51, 151);
+}
