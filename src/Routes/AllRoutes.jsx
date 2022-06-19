@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { CheckoutNew } from "../Checkout/Checkout";
 // import Footer from "../components/Footer";
 import { Login } from "../components/Login";
 import { Navbar } from "../components/Navbar";
@@ -23,7 +24,8 @@ export const AllRoutes = () => {
         <Route exact path="/products/:type/:subtype" element={<ProductTypes />}></Route>
         <Route exact path="/cart" element={<Cart />}></Route>
         {/* <Route exact path="/cart" element={<Cart1 />}></Route> */}
-        <Route exact path="/checkout" element={<Checkout />}></Route>
+        {/* <Route exact path="/checkout" element={<Checkout />}></Route> */}
+        <Route exact path="/checkout" element={<CheckoutNew />}></Route>
         <Route exact path="/signup" element={<Login />}></Route>
       </Routes>
     </div>

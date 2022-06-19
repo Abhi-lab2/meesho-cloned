@@ -60,15 +60,15 @@
 #setup {
   display: flex;
 }
-h1,
-h2 {
+#mainbox > h1,
+#mainbox > h2 {
   /* border:1px solid red; */
   margin: 50px 0 0 30px;
 }
-h1 {
+#mainbox > h1 {
   font-size: 50px;
 }
-h2 {
+#mainbox > h2 {
   font-size: 30px;
   width: 400px;
 }
@@ -128,7 +128,7 @@ h2 {
   height: 50px;
   margin: 0px 0 0 95px;
 }
-h2 {
+#mainbox  > h2 {
   font-family: Favoritfreshly, sans-serif;
   color: #333;
   font-size: 24px;
@@ -158,7 +158,7 @@ h2 {
   grid-template-columns: 700px 500px;
   grid-gap: 20px;
 }
-h3 {
+#mainbox > h3 {
   margin-left: 50px;
   font-family: Favoritfreshly, sans-serif;
   color: #333;
@@ -178,7 +178,7 @@ h3 {
   margin: 0 50px 0 15px;
   /* border: 1px solid black; */
 }
-h4 {
+#mainbox > h4 {
   font-family: Favoritfreshly, sans-serif;
   color: #333;
   font-size: 14px;
@@ -248,7 +248,7 @@ hr {
 #todtotal {
   width: 80%;
 }
-button {
+.btnn > button {
   background-color: rgb(49, 103, 255);
   color: white;
   border: 0;

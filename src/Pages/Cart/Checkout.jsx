@@ -1,7 +1,11 @@
-import "./checkout.css";
+// import "./checkout.css";
 
 export const Checkout = () => {
   // const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleart = () => {
+    alert("PRODUCT TO BE DELIVERED SOOON - CONGRATULATIONS");
+  };
   return (
     <>
       <div id="topcontainer">
@@ -9,9 +13,7 @@ export const Checkout = () => {
           <div id="navImg"></div>
 
           <div id="setup">
-            <div id="radii">
-              
-            </div>
+            {/* <div id="radii"></div> */}
 
             <div></div>
           </div>
@@ -31,46 +33,46 @@ export const Checkout = () => {
             <div id="name">
               <div id="firstname">
                 <h4>First Name</h4>
-                <input id="nameinput" type="text" />
+                <input id="nameinput" type="text" required={true}/>
               </div>
               <div id="lastname">
                 <h4>Last Name</h4>
-                <input id="nameinput" type="text" />
+                <input id="nameinput" type="text" required={true}/>
               </div>
             </div>
             <div id="fullname">
               <h4>Full Name for Delivery Address</h4>
-              <input id="addressinput" type="text" />
+              <input id="addressinput" type="text" required={true}/>
             </div>
-            <input type="checkbox" id="namebox" />
+            <input type="checkbox" id="namebox" required={true}/>
             <label id="boxlabel" for="phone">
               My Delivery Address name is same as my First and Last Name
             </label>
             <div id="address">
               <h4>Address Line 1</h4>
-              <input id="addressinput" type="text" />
+              <input id="addressinput" type="text" isRequired/>
             </div>
             <div id="address">
               <h4>Address Line 2 (Optional)</h4>
-              <input id="addressinput" type="text" />
+              <input id="addressinput" type="text" isRequired/>
             </div>
             <div id="place">
               <div id="city">
                 <h4>City</h4>
-                <input id="cityinput" type="text" />
+                <input id="cityinput" type="text" isRequired/>
               </div>
               <div id="state">
                 <h4>State</h4>
-                <input id="stateinput" type="text" />
+                <input id="stateinput" type="text" isRequired/>
               </div>
               <div id="state">
                 <h4>Zip</h4>
-                <input id="zipinput" type="text" />
+                <input id="zipinput" type="text" isRequired/>
               </div>
             </div>
             <div id="address">
               <h4>Phone</h4>
-              <input id="addressinput" type="number" />
+              <input id="addressinput" type="number" isRequired/>
             </div>
             <input type="checkbox" id="phonebox" />
             <label id="boxlabel" for="phone">
@@ -81,7 +83,7 @@ export const Checkout = () => {
                 Email (We require your email to send you receiots and order
                 updates)
               </h4>
-              <input id="addressinput" type="text" />
+              <input id="addressinput" type="text" isRequired/>
             </div>
             <hr />
             <div id="total">
@@ -92,7 +94,7 @@ export const Checkout = () => {
                 <h3>0</h3>
               </div>
             </div>
-            <button>Next</button>
+            <div className="btnn"><button onClick={handleart}>PRODUCT BROUGHT SUCCESSFULLY</button></div>
           </div>
           <div id="righttopbox">
             <div className="promo">
@@ -113,7 +115,7 @@ export const Checkout = () => {
               <option value="">Friday, February 11</option>
             </select>
             <hr id="hr4" />
-            
+
             <hr id="hr3" />
             <div id="mealsbox">
               <div id="meals">
