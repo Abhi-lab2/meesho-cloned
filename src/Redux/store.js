@@ -5,12 +5,12 @@ import { applyMiddleware } from "redux";
 import { compose } from "redux";
 import thunk from "redux-thunk";
 import cartReducer from "./Cart/reducer";
-// import { productReducer } from "./Product/reducer";
-// import authReducer from "./Auth/reducer";
+import { productReducer } from "./Product/reducer";
 
 
 const rootReducer = combineReducers({
   cartData: cartReducer,
+  ecommerceData : productReducer
   // authReducer,
 });
 

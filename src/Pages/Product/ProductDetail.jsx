@@ -10,12 +10,17 @@ import {
   FaShopify,
   FaAngleRight,
 } from "react-icons/fa";
+import {BsBagCheckFill} from "react-icons/bs"
+import {useNavigate} from "react-router-dom"
 import { addProductCart } from "../../Redux/Product/action";
-import Footer from "../../components/Footer";
+// import Footer from "../../components/Footer";
 
 let discount = Math.floor(Math.random() * 150);
 
 export const ProductDetail = () => {
+  const navigate = useNavigate();
+  const currentProduct=useSelector((store)=>store.ecommerceData.currentProduct)
+
   let allImages = [
     "https://source.unsplash.com/random/?cloths",
     "https://source.unsplash.com/random/?shoes",
@@ -39,13 +44,19 @@ export const ProductDetail = () => {
 
   console.log(products[i], i);
 
-  const cartHandler = (e) => {
-    dispatch(addProductCart(e.target.id)); //addToCart
+  const cartHandler = () => {
+    currentProduct && dispatch(addProductCart(currentProduct))
+    // dispatch(addProductCart(e.target.id)); //addToCart
     if (state === "Add to Cart") {
       alert("product added");
       setState("Added into the Cart");
     }
   };
+
+  const directBuyHandler = () => {
+    alert(`Product total Cost = ${discounted_price}` )
+    navigate("/checkout")
+  }
 
   let { images, title, rating, original_price, discounted_price, details } =
     products[i];
@@ -67,6 +78,7 @@ export const ProductDetail = () => {
         <button id={+id} onClick={cartHandler}>
           <FaShoppingCart /> {state} {localStorage.setItem(`product/${id}`,  JSON.stringify(`product/${id}`))}
         </button>
+        <button id={+id} onClick={directBuyHandler}><BsBagCheckFill/> Buy Now</button>
         <hr />
         <p>{images.length} Similar products</p>
         <div>
